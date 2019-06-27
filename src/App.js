@@ -1,14 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      Hello.
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      count: 8
+    }
+  }
 
-    </div>
-  );
+  render() {
+    return (
+      <div data-test="component-app">
+        <h1 data-test="counter-display">The counter is {this.state.count}</h1>
+        <button data-test="increment-button" onClick={() => {
+          this.setState({
+            count: this.state.count + 1
+          })
+        }}>Increment</button>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
