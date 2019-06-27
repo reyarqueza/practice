@@ -14,11 +14,8 @@ class App extends Component {
     return (
       <div data-test="component-app">
         <h1 data-test="counter-display">The counter is {this.state.count}</h1>
-        <button data-test="increment-button" onClick={() => {
-          this.setState({
-            count: this.state.count + 1
-          })
-        }}>Increment</button>
+        <button data-test="increment-button" onClick={() => this.setState({count: this.state.count + 1})
+        }>Increment</button>
       </div>
     )
   }

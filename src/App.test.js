@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { shallow, mount } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
 import App from './App';
 
@@ -34,7 +34,7 @@ test('counter starts at 0', () => {
 })
 
 test('clicking button increments counter display', () => {
-  const wrapper = shallow(<App />)
+  const wrapper = mount(<App />)
   const button = findByTestAttr(wrapper, 'increment-button')
   const counterDisplay = findByTestAttr(wrapper, 'counter-display')
   const initialCounter = 8
